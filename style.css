@@ -1,0 +1,198 @@
+body {
+    /* background-color: black; */
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+nav {
+    margin-top: 1rem;
+    background-color: rgba(120, 113, 113, 0.488);
+    display: flex;
+    width: 100%;
+    border: 1px solid hsla(0, 0%, 100%, 0.501);
+    border-radius: 5px;
+
+}
+
+nav>ul {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0%;
+    color: black;
+
+}
+
+main {
+    height: 80vh;
+    width: 100%;
+    background-color: rgba(25, 23, 23, 0.375);
+    margin-top: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.505);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main>#text>h1 {
+    margin-left: 10rem;
+    font-size: 4rem;
+    margin-top: 0%;
+    margin-bottom: 8px;
+    color: rgb(0, 0, 0);
+}
+
+main>#text>h1>marquee {
+    margin-top: 10rem;
+}
+
+main>#image>img {
+    width: 100%;
+    height: 100%;
+}
+
+#summary {
+    height: 70vh;
+    width: 100%;
+    background-color: rgba(25, 23, 23, 0.375);
+    margin-top: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.505);
+    border-radius: 5px;
+}
+
+#summary>h1 {
+    margin-bottom: 0%;
+    font-size: 4rem;
+    margin-top: 0%;
+    margin-bottom: 8px;
+    color: rgb(19, 60, 35);
+    text-align: center;
+}
+
+#summary>p {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(45, 37, 26);
+}
+
+#skills {
+    height: 60vh;
+    width: 100%;
+    background-color: rgba(25, 23, 23, 0.375);
+    margin-top: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.505);
+    border-radius: 5px;
+}
+
+#skills>h1 {
+    margin-bottom: 0%;
+    font-size: 4rem;
+    margin-top: 0%;
+    margin-bottom: 8px;
+    color: rgb(19, 60, 35);
+    text-align: center;
+}
+
+#skills {
+    text-align: center;
+    /* margin: 20px; */
+}
+
+#imagesAndText {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* Adds space between the items */
+}
+
+#imagesAndText div {
+    flex: 1 1 30%;
+    /* Makes each div take about 30% of the row */
+    max-width: 30%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#imagesAndText img {
+    width: 100px;
+    /* Adjust the image size */
+    height: auto;
+}
+
+#imagesAndText h3 {
+    margin-top: 10px;
+}
+
+#resume {
+    height: 40vh;
+    width: 100%;
+    background-color: rgba(25, 23, 23, 0.375);
+    margin-top: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.505);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#resume h1 {
+    font-size: 4rem;
+    color: rgb(19, 60, 35);
+    margin-bottom: 20px;
+}
+
+#resume button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#resume button:hover {
+    background-color: #45a049;
+}
+
+
+/* Footer Section */
+footer {
+    margin-top: 1rem;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #aaa;
+}
