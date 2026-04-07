@@ -49,7 +49,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <div className="app">
         <Navbar toggleTheme={toggleTheme} currentTheme={theme} />
         <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
