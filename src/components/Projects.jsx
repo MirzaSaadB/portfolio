@@ -80,7 +80,7 @@ const Projects = () => {
           ))}
         </motion.div>
         
-        <GithubStats username="mirza-mohammad-saad" />
+        <GithubStats username="MirzaSaadB" />
       </div>
     </motion.section>
   );

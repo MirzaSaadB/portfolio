@@ -4,27 +4,6 @@ import './About.css';
 import profilePic from '../assets/mohammed saad .jpg';
 
 const About = () => {
-  const certifications = [
-    {
-      title: "Oracle Certified Associate",
-      issuer: "Java SE 8 Programmer",
-      date: "2024",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-    },
-    {
-      title: "Spring Boot Professional",
-      issuer: "Enterprise Frameworks",
-      date: "2025",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
-    },
-    {
-      title: "Full Stack Development",
-      issuer: "Advanced Web Systems",
-      date: "2025",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-    }
-  ];
-
   return (
     <section id="about" className="about-section">
       <div className="container">
@@ -65,33 +44,6 @@ const About = () => {
               </div>
             </div>
           </motion.div>
-        </div>
-
-        {/* New Certification Gallery */}
-        <div className="certs-wrapper">
-          <h3 className="category-title" style={{ marginBottom: '40px' }}>Digital Credentials</h3>
-          <div className="certs-grid">
-            {certifications.map((cert, index) => (
-              <motion.div 
-                key={index} 
-                className="cert-card"
-                whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(100, 255, 218, 0.1)' }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="cert-icon-wrapper">
-                  <img src={cert.icon} alt={cert.title} />
-                </div>
-                <div className="cert-info">
-                  <h4>{cert.title}</h4>
-                  <p>{cert.issuer}</p>
-                  <span className="cert-date">{cert.date}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

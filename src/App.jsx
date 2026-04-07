@@ -51,7 +51,7 @@ setTheme(theme === 'dark' ? 'light' : 'dark');
 };
 
 return (
-<BrowserRouter basename="/portfolio">
+<HashRouter>
 <div className="app">
 <Navbar toggleTheme={toggleTheme} currentTheme={theme} />
 <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
@@ -60,7 +60,7 @@ return (
 <HireMe />
 <Footer />
 </div>
-</BrowserRouter>
+</HashRouter>
 );
 }
 
