@@ -45,7 +45,7 @@ const Projects = () => {
 
   return (
     <motion.section 
-      className="projects-section" style={{ minHeight: '100vh', paddingTop: '120px' }}
+      className="projects-section" style={{ minHeight: '100vh', paddingTop: '80px' }}
       variants={containerVariants}
       initial="hidden"
       animate="visible"

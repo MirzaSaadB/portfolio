@@ -31,10 +31,10 @@
 
 .kpi-grid {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 60px;
-  margin-top: 40px;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .kpi-card {
@@ -68,7 +68,7 @@
 }
 
 .gallery-section {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .gallery-slider {
@@ -135,7 +135,7 @@
 .detail-content-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 60px;
+  gap: 30px;
 }
 
 .detail-subtitle {
@@ -159,8 +159,8 @@
 }
 
 .capabilities-list li {
-  margin-bottom: 12px;
-  font-size: 1.1rem;
+  margin-bottom: 6px;
+  font-size: 1rem;
 }
 
 .achievement-quote {

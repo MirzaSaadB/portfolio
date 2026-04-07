@@ -67,7 +67,7 @@ const ProjectDetail = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, x: -50 }}
       className="project-detail-section"
-      style={{ padding: '150px 0', minHeight: '100vh' }}
+      style={{ padding: '80px 0', minHeight: '100vh' }}
     >
       <div className="container">
         <Link to="/projects" className="back-link">← Back to Projects</Link>

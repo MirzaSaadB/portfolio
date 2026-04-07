@@ -116,7 +116,7 @@ ul {
 
 .section-title {
   font-size: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   text-align: left;
   font-weight: 400;
   color: var(--text-secondary);
@@ -132,5 +132,5 @@ ul {
 }
 
 section {
-  padding: 120px 0;
+  padding: 60px 0;
 }
