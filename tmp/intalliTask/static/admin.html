@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - IntelliTask AI</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+    <h1>Admin Dashboard</h1>
+    <div>
+        <a href="index.html" class="btn">Home</a>
+        <button id="logout-button" class="btn btn-danger">Logout</button>
+    </div>
+</header>
+
+        <main>
+            <section class="dashboard-section">
+                <h2>User Management</h2>
+                <div class="table-container">
+                    <table id="users-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-table-body">
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2>All System Tasks</h2>
+                <div class="table-container">
+                    <table id="tasks-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tasks-table-body">
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

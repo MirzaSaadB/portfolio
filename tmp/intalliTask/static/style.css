@@ -1,0 +1,372 @@
+:root {
+	--bg-color: #f4f7f6;
+	--text-color: #333;
+	--container-bg: #ffffff;
+	--header-color: #2c3e50;
+	--subheader-color: #7f8c8d;
+	--section-header-color: #34495e;
+	--border-color: #ecf0f1;
+	--input-border: #ddd;
+	--input-focus-border: #3498db;
+	--shadow-color: rgba(0, 0, 0, 0.07);
+    --modal-overlay: rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode {
+	--bg-color: #1a1a2e;
+	--text-color: #e0e0e0;
+	--container-bg: #16213e;
+	--header-color: #ffffff;
+	--subheader-color: #a7a7a7;
+	--section-header-color: #e0e0e0;
+	--border-color: #2a2a4e;
+	--input-border: #444;
+	--input-focus-border: #e94560;
+	--shadow-color: rgba(0, 0, 0, 0.2);
+    --modal-overlay: rgba(0, 0, 0, 0.7);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	line-height: 1.6;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+	max-width: 900px;
+	margin: 2rem auto;
+	padding: 1rem 2rem;
+}
+
+/* Header Styling */
+header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+header h1 {
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: var(--header-color);
+}
+
+header p {
+	font-size: 1.1rem;
+	color: var(--subheader-color);
+}
+
+header div {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#theme-switcher {
+	margin-top: 1rem;
+	background-color: var(--header-color);
+	color: var(--bg-color);
+	border: 2px solid var(--header-color);
+}
+
+/* Form & Section Styling */
+.task-form-container,
+.task-list-container,
+.modal-content {
+	background: var(--container-bg);
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: 0 4px 15px var(--shadow-color);
+	margin-bottom: 2rem;
+	transition: background-color 0.3s;
+}
+
+h2 {
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+	color: var(--section-header-color);
+	border-bottom: 2px solid var(--border-color);
+	padding-bottom: 0.5rem;
+}
+
+#new-task-form input,
+#new-task-form textarea,
+#edit-task-form input,
+#edit-task-form textarea,
+#new-task-form select {
+	width: 100%;
+	padding: 0.8rem;
+	margin-bottom: 1rem;
+	border: 1px solid var(--input-border);
+	border-radius: 5px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 1rem;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+#new-task-form input:focus,
+#new-task-form textarea:focus,
+#edit-task-form input:focus,
+#edit-task-form textarea:focus,
+#new-task-form select:focus {
+	outline: none;
+	border-color: var(--input-focus-border);
+}
+
+/* Button Styling */
+.btn {
+	padding: 0.7rem 1.5rem;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+a.btn {
+    background-color: #7f8c8d;
+    text-decoration: none;
+}
+
+.btn-primary {
+	background-color: #3498db;
+}
+
+.btn-primary:hover {
+	background-color: #2980b9;
+}
+
+.btn-secondary {
+	background-color: #2ecc71;
+}
+
+.btn-secondary:hover {
+	background-color: #27ae60;
+}
+
+.btn-danger {
+	background-color: #e74c3c;
+}
+
+.btn-danger:hover {
+	background-color: #c0392b;
+}
+
+#new-task-form .btn-primary {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* Task Item Styling */
+.task-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.task-item:last-child {
+	border-bottom: none;
+}
+
+.task-item.completed h3 {
+	text-decoration: line-through;
+	color: var(--subheader-color);
+}
+
+.task-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.task-content p {
+    font-size: 0.95rem;
+}
+
+.task-content .assignee {
+    font-size: 0.85rem;
+    color: var(--subheader-color);
+    margin-top: 0.5rem;
+}
+
+/* Priority and Category Badges (No color changes needed) */
+.priority,
+.category {
+	display: inline-block;
+	padding: 0.25rem 0.75rem;
+	border-radius: 12px;
+	color: #fff;
+	font-size: 0.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.category {
+	margin-right: 0.5rem;
+}
+
+.priority.high {
+	background-color: #e74c3c;
+}
+
+.priority.medium {
+	background-color: #f39c12;
+}
+
+.priority.low {
+	background-color: #3498db;
+}
+
+.category.work {
+	background-color: #3498db;
+}
+
+.category.personal {
+	background-color: #2ecc71;
+}
+
+.category.health {
+	background-color: #9b59b6;
+}
+
+.category.general {
+	background-color: #95a5a6;
+}
+
+/* Modal Styling */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: var(--modal-overlay);
+}
+
+.modal-content {
+	margin: 15% auto;
+	width: 80%;
+	max-width: 500px;
+	position: relative;
+}
+
+.close-button {
+	color: var(--subheader-color);
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+	color: var(--text-color);
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.container {
+		padding: 1rem;
+	}
+
+	.task-item {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+	}
+
+	.task-details {
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header h1 {
+		font-size: 2rem;
+	}
+}
+
+/* Add this to the end of your style.css file */
+
+/* Improved styling for form groups */
+.form-group {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: inline-block;
+    margin-right: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    vertical-align: middle;
+}
+
+#new-task-form select {
+    padding: 0.7rem;
+    border-radius: 5px;
+    border: 1px solid var(--input-border);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+#new-task-form select:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+}
+header div {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.task-content .assignee {
+    font-size: 0.85rem;
+    color: var(--subheader-color);
+    margin-top: 0.5rem;
+}
+/* Style for the home button link */
+a.btn {
+    background-color: #7f8c8d;
+    text-decoration: none;
+    padding: 0.7rem 1.5rem; /* Match other buttons */
+    color: #fff;
+    line-height: 1.2; /* Adjust for alignment */
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+a.btn:hover {
+    background-color: #6c7a7b;
+}

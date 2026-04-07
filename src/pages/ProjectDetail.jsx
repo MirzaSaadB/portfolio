@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './ProjectDetail.css';
+import intalliSnap from '../assets/intallitask_real.png';
+import rentalSnap from '../assets/rental_system_real.png';
 
 const projectData = {
   'intallitask': {
@@ -18,9 +20,9 @@ const projectData = {
       { label: 'Architecture', value: 'Micro-services' }
     ],
     gallery: [
-      { title: 'Dashboard View', color: '#1a1c22' },
-      { title: 'Kanban Board', color: '#16181d' },
-      { title: 'User Analytics', color: '#1a1c22' }
+      { title: 'Live Interface', image: intalliSnap },
+      { title: 'Auth Flow', image: intalliSnap },
+      { title: 'System Heartbeat', image: intalliSnap }
     ],
     link: '#'
   },
@@ -38,9 +40,9 @@ const projectData = {
       { label: 'Scalability', value: 'Kubernetes Ready' }
     ],
     gallery: [
-      { title: 'Inventory Control', color: '#1a1c22' },
-      { title: 'Financial Reports', color: '#16181d' },
-      { title: 'Admin Console', color: '#1a1c22' }
+      { title: 'Real Marketplace', image: rentalSnap },
+      { title: 'Inventory Dashboard', image: rentalSnap },
+      { title: 'Admin Logic', image: rentalSnap }
     ],
     link: '#'
   }
@@ -90,9 +92,9 @@ const ProjectDetail = () => {
                 key={index} 
                 className="gallery-item"
                 whileHover={{ scale: 1.02 }}
-                style={{ background: item.color }}
               >
-                <div className="gallery-placeholder">
+                <img src={item.image} alt={item.title} className="gallery-img" />
+                <div className="gallery-overlay">
                   <span>{item.title}</span>
                 </div>
               </motion.div>

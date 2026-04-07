@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IntelliTask AI</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+	<div class="container">
+		<header>
+    <h1>IntelliTask AI</h1>
+    <p>Your intelligent assistant for task management</p>
+    <div>
+        <a href="index.html" class="btn">Home</a>
+        <button id="theme-switcher" class="btn">Toggle Dark Mode</button>
+        <button id="logout-button" class="btn btn-danger">Logout</button>
+    </div>
+</header>
+
+		<main>
+			<section class="task-form-container">
+				<h2>Add a New Task</h2>
+				<form id="new-task-form">
+    <input type="text" id="new-task-title" placeholder="Task Title (e.g., 'Urgent: Deploy new feature')" required>
+    <textarea id="new-task-description" placeholder="Task Description"></textarea>
+    
+    <div class="form-group">
+        <label for="task-assignee">Assign To:</label>
+        <select id="task-assignee" required>
+            <option value="">Select a user...</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Task</button>
+</form>
+			</section>
+
+			<section class="task-list-container">
+				<h2>My Tasks</h2>
+				<div id="task-list">
+					<div class="task-item">
+						<div class="task-content">
+							<h3>Finalize project proposal</h3>
+							<p>Review the feedback from the team and update the final draft for the AI integration.</p>
+						</div>
+						<div class="task-details">
+							<span class="priority high">High</span>
+							<div class="task-actions">
+								<button class="btn btn-secondary">Complete</button>
+								<button class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="task-item">
+						<div class="task-content">
+							<h3>Schedule important team meeting</h3>
+							<p>Organize a meeting to discuss Q3 goals.</p>
+						</div>
+						<div class="task-details">
+							<span class="priority medium">Medium</span>
+							<div class="task-actions">
+								<button class="btn btn-secondary">Complete</button>
+								<button class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="task-item">
+						<div class="task-content">
+							<h3>Organize project files</h3>
+							<p>Clean up the shared drive for better access.</p>
+						</div>
+						<div class="task-details">
+							<span class="priority low">Low</span>
+							<div class="task-actions">
+								<button class="btn btn-secondary">Complete</button>
+								<button class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<div id="edit-modal" class="modal">
+			<div class="modal-content">
+				<span class="close-button">&times;</span>
+				<h2>Edit Task</h2>
+				<form id="edit-task-form">
+					<input type="hidden" id="edit-task-id">
+					<input type="text" id="edit-task-title" required>
+					<textarea id="edit-task-description"></textarea>
+					<button type="submit" class="btn btn-primary">Save Changes</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom';
 import GithubStats from './GithubStats';
 import './Projects.css';
 
+import intalliSnap from '../assets/intallitask_real.png';
+import rentalSnap from '../assets/rental_system_real.png';
+
 const Projects = () => {
   const projects = [
     {
       id: 'intallitask',
       title: 'intalliTask',
       type: 'Web Application',
-      description: 'A full-stack task manager web application designed for high productivity and an intuitive user experience. Engineered with modern responsive principles.',
+      description: 'Intelligent task management system with automated prioritization and collaborative workflows.',
+      image: intalliSnap,
       tech: ['React', 'Spring Boot', 'SQL'],
       link: '/projects/intallitask'
     },
@@ -18,7 +22,8 @@ const Projects = () => {
       id: 'rental-system',
       title: 'Rental System',
       type: 'Enterprise System',
-      description: 'A comprehensive rental management architecture to streamline operations, tracking, and billing for various organizational assets.',
+      description: 'Scalable equipment rental platform with multi-tenant isolation and automated financial tracking.',
+      image: rentalSnap,
       tech: ['Java', 'Spring', 'Hibernate'],
       link: '/projects/rental-system'
     }
