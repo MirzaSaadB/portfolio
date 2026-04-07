@@ -1,9 +1,11 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import './ProjectDetail.css';
-import intalliSnap from '../assets/intallitask_real.png';
-import rentalSnap from '../assets/rental_system_real.png';
+import intalliLandingSnap from '../assets/intallitask_real.png';
+import intalliDashSnap from '../assets/intallitask_dashboard.png';
+import intalliAdminSnap from '../assets/intallitask_admin.png';
+import intalliLoginSnap from '../assets/intallitask_login.png';
+
+import rentalShopSnap from '../assets/rental_system_real.png';
+import rentalAdminSnap from '../assets/rental_system_admin.png';
+import rentalBookingsSnap from '../assets/rental_system_bookings.png';
 
 const projectData = {
   'intallitask': {
@@ -20,9 +22,10 @@ const projectData = {
       { label: 'Architecture', value: 'Micro-services' }
     ],
     gallery: [
-      { title: 'Live Interface', image: intalliSnap },
-      { title: 'Auth Flow', image: intalliSnap },
-      { title: 'System Heartbeat', image: intalliSnap }
+      { title: 'Project Landing', image: intalliLandingSnap },
+      { title: 'Task Dashboard', image: intalliDashSnap },
+      { title: 'Admin Control', image: intalliAdminSnap },
+      { title: 'Security Entry', image: intalliLoginSnap }
     ],
     link: '#'
   },
@@ -40,9 +43,9 @@ const projectData = {
       { label: 'Scalability', value: 'Kubernetes Ready' }
     ],
     gallery: [
-      { title: 'Real Marketplace', image: rentalSnap },
-      { title: 'Inventory Dashboard', image: rentalSnap },
-      { title: 'Admin Logic', image: rentalSnap }
+      { title: 'Gear Marketplace', image: rentalShopSnap },
+      { title: 'Inventory Hub', image: rentalAdminSnap },
+      { title: 'My Bookings', image: rentalBookingsSnap }
     ],
     link: '#'
   }
