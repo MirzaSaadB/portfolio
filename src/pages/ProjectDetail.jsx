@@ -136,9 +136,7 @@ const ProjectDetail = () => {
                ))}
             </div>
             
-            <div style={{ marginTop: '50px' }}>
-               <a href={project.link} className="cyber-button">Open Case Study</a>
-            </div>
+
           </div>
         </div>
       </div>
