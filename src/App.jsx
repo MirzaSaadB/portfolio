@@ -12,53 +12,56 @@ import ProjectDetail from './pages/ProjectDetail';
 import About from './components/About';
 import Experience from './components/Experience';
 
+import HireMe from './components/HireMe';
+
 // Professional Home Composite
 const Home = () => (
-  <>
-    <Hero />
-    <About />
-    <Experience />
-  </>
+<>
+<Hero />
+<About />
+<Experience />
+</>
 );
 
 const AnimatedRoutes = () => {
-  const location = useLocation();
-  return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/projects/:id" element={<ProjectDetail />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </AnimatePresence>
-  );
+const location = useLocation();
+return (
+<AnimatePresence mode="wait">
+<Routes location={location} key={location.pathname}>
+<Route path="/" element={<Home />} />
+<Route path="/skills" element={<Skills />} />
+<Route path="/projects" element={<Projects />} />
+<Route path="/projects/:id" element={<ProjectDetail />} />
+<Route path="/contact" element={<Contact />} />
+<Route path="*" element={<NotFound />} />
+</Routes>
+</AnimatePresence>
+);
 };
 
 function App() {
-  const [theme, setTheme] = useState('dark');
+const [theme, setTheme] = useState('dark');
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
+useEffect(() => {
+document.documentElement.setAttribute('data-theme', theme);
+}, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
+const toggleTheme = () => {
+setTheme(theme === 'dark' ? 'light' : 'dark');
+};
 
-  return (
-    <BrowserRouter basename="/portfolio">
-      <div className="app">
-        <Navbar toggleTheme={toggleTheme} currentTheme={theme} />
-        <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-          <AnimatedRoutes />
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
-  );
+return (
+<BrowserRouter basename="/portfolio">
+<div className="app">
+<Navbar toggleTheme={toggleTheme} currentTheme={theme} />
+<main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+<AnimatedRoutes />
+</main>
+<HireMe />
+<Footer />
+</div>
+</BrowserRouter>
+);
 }
 
 export default App;

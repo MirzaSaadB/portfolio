@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import './ProjectDetail.css';
 
 const projectData = {
   'intallitask': {
@@ -15,6 +16,11 @@ const projectData = {
       { label: 'Uptime', value: '99.9%' },
       { label: 'Latency', value: '< 200ms' },
       { label: 'Architecture', value: 'Micro-services' }
+    ],
+    gallery: [
+      { title: 'Dashboard View', color: '#1a1c22' },
+      { title: 'Kanban Board', color: '#16181d' },
+      { title: 'User Analytics', color: '#1a1c22' }
     ],
     link: '#'
   },
@@ -31,6 +37,11 @@ const projectData = {
       { label: 'Throughput', value: '850 req/sec' },
       { label: 'Scalability', value: 'Kubernetes Ready' }
     ],
+    gallery: [
+      { title: 'Inventory Control', color: '#1a1c22' },
+      { title: 'Financial Reports', color: '#16181d' },
+      { title: 'Admin Console', color: '#1a1c22' }
+    ],
     link: '#'
   }
 };
@@ -41,67 +52,78 @@ const ProjectDetail = () => {
 
   if (!project) return <div className="container" style={{ padding: '150px 0' }}><h2>Project Not Found</h2></div>;
 
-  const containerVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
-
   return (
     <motion.section 
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, x: -50 }}
       className="project-detail-section"
       style={{ padding: '150px 0', minHeight: '100vh' }}
     >
       <div className="container">
-        <Link to="/projects" style={{ display: 'inline-block', marginBottom: '30px', color: 'var(--primary-color)' }}>← Back to Projects</Link>
-        <span style={{ display: 'block', textTransform: 'uppercase', color: 'var(--primary-color)', letterSpacing: '2px', marginBottom: '10px' }}>{project.type}</span>
-        <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '20px' }}>{project.title}</h1>
+        <Link to="/projects" className="back-link">← Back to Projects</Link>
+        <span className="project-type-tag">{project.type}</span>
+        <h1 className="project-detail-title">{project.title}</h1>
         
         {/* KPI Dashboard */}
-        <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', marginBottom: '60px' }}>
+        <div className="kpi-grid">
           {project.kpis.map((kpi, index) => (
             <motion.div 
               key={index} 
-              style={{ background: 'var(--bg-color-alt)', padding: '20px 40px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', flex: '1', minWidth: '200px' }}
+              className="kpi-card"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 + index * 0.1 }}
             >
-              <h4 style={{ fontSize: '0.8rem', color: 'var(--primary-color)', textTransform: 'uppercase', opacity: 0.8, marginBottom: '10px' }}>{kpi.label}</h4>
-              <p style={{ fontSize: '1.5rem', fontWeight: '700' }}>{kpi.value}</p>
+              <h4 className="kpi-label">{kpi.label}</h4>
+              <p className="kpi-value">{kpi.value}</p>
             </motion.div>
           ))}
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px', marginTop: '40px' }}>
-          <div>
-            <h3 style={{ borderBottom: '1px solid var(--accent-color)', paddingBottom: '10px', marginBottom: '20px' }}>Technical Narrative</h3>
-            <p style={{ fontSize: '1.2rem', color: 'var(--text-primary)', lineHeight: '1.8' }}>{project.description}</p>
+        {/* Interactive Gallery Slider */}
+        <div className="gallery-section">
+          <h3 className="category-subtitle">Interface Preview</h3>
+          <div className="gallery-slider">
+            {project.gallery.map((item, index) => (
+              <motion.div 
+                key={index} 
+                className="gallery-item"
+                whileHover={{ scale: 1.02 }}
+                style={{ background: item.color }}
+              >
+                <div className="gallery-placeholder">
+                  <span>{item.title}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div className="detail-content-grid">
+          <div className="content-left">
+            <h3 className="detail-subtitle">Technical Narrative</h3>
+            <p className="detail-text">{project.description}</p>
             
-            <h3 style={{ borderBottom: '1px solid var(--accent-color)', paddingBottom: '10px', marginBottom: '20px', marginTop: '40px' }}>Key Capabilities</h3>
-            <ul style={{ listStyle: 'square', paddingLeft: '20px', color: 'var(--text-primary)' }}>
-              {project.features.map((f, i) => <li key={i} style={{ marginBottom: '12px', fontSize: '1.1rem' }}>{f}</li>)}
+            <h3 className="detail-subtitle" style={{ marginTop: '40px' }}>Key Capabilities</h3>
+            <ul className="capabilities-list">
+              {project.features.map((f, i) => <li key={i}>{f}</li>)}
             </ul>
           </div>
           
-          <div>
-            <h3 style={{ borderBottom: '1px solid var(--accent-color)', paddingBottom: '10px', marginBottom: '20px' }}>Technical Achievements</h3>
-            <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: '1.8', fontStyle: 'italic', marginBottom: '30px', borderLeft: '4px solid var(--primary-color)', paddingLeft: '20px' }}>
+          <div className="content-right">
+            <h3 className="detail-subtitle">Technical Achievements</h3>
+            <p className="achievement-quote">
               {project.achievements}
             </p>
 
-            <h3 style={{ borderBottom: '1px solid var(--accent-color)', paddingBottom: '10px', marginBottom: '20px' }}>The Engineering Challenge</h3>
-            <p style={{ fontSize: '1.1rem', color: 'var(--text-primary)', lineHeight: '1.6' }}>{project.challenges}</p>
+            <h3 className="detail-subtitle">The Engineering Challenge</h3>
+            <p className="detail-text">{project.challenges}</p>
             
-            <h3 style={{ borderBottom: '1px solid var(--accent-color)', paddingBottom: '10px', marginBottom: '20px', marginTop: '40px' }}>Modern Ecosystem</h3>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+            <h3 className="detail-subtitle" style={{ marginTop: '40px' }}>Modern Ecosystem</h3>
+            <div className="tech-tags-container">
                {project.tech.map((t, i) => (
-                 <span key={i} className="tech-tag" style={{ background: 'var(--bg-color-alt)', padding: '6px 18px', color: 'var(--primary-color)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px' }}>
-                   {t}
-                 </span>
+                 <span key={i} className="tech-badge">{t}</span>
                ))}
             </div>
             

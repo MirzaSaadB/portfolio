@@ -19,17 +19,17 @@
 }
 
 [data-theme="light"] {
-  --bg-color: #ffffff;
-  --bg-color-alt: #f4f6f8;
-  --primary-color: #2b6cb0;
-  --secondary-color: #2d3748;
-  --accent-color: #cbd5e0;
-  --text-primary: #4a5568;
-  --text-secondary: #1a202c;
+  --bg-color: #f1f5f9; /* Slate 100 */
+  --bg-color-alt: #e2e8f0; /* Slate 200 */
+  --primary-color: #334155; /* Slate 700 */
+  --secondary-color: #1e293b; /* Slate 800 */
+  --accent-color: #94a3b8; /* Slate 400 */
+  --text-primary: #475569; /* Slate 600 */
+  --text-secondary: #0f172a; /* Slate 900 */
   
-  --soft-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: 1px solid rgba(0, 0, 0, 0.05);
+  --soft-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --glass-bg: rgba(241, 245, 249, 0.9);
+  --glass-border: 1px solid rgba(15, 23, 42, 0.05);
 }
 
 * {

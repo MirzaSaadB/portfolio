@@ -2,85 +2,78 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Skills.css';
 
+const SkillBar = ({ name, icon, level, delay }) => (
+  <motion.div 
+    className="skill-item-detailed"
+    initial={{ opacity: 0, x: -20 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5, delay }}
+    viewport={{ once: true }}
+  >
+    <div className="skill-info-row">
+      <div className="skill-label">
+        <img src={icon} alt={name} className="skill-icon-small" />
+        <span className="skill-name-text">{name}</span>
+      </div>
+      <span className="skill-percentage">{level}%</span>
+    </div>
+    <div className="skill-progress-bg">
+      <motion.div 
+        className="skill-progress-fill"
+        initial={{ width: 0 }}
+        whileInView={{ width: `${level}%` }}
+        transition={{ duration: 1.5, ease: "easeOut", delay: delay + 0.2 }}
+        viewport={{ once: true }}
+      />
+    </div>
+  </motion.div>
+);
+
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Backend Development",
+      title: "Backend Core",
       skills: [
-        { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-        { name: 'Spring', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
-        { name: 'Spring Boot', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
-        { name: 'Hibernate', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg' },
-        { name: 'Enterprise Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-plain.svg' }
+        { name: 'Java', level: 95, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+        { name: 'Spring Boot', level: 90, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
+        { name: 'Hibernate', level: 85, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg' },
+        { name: 'SQL / Databases', level: 80, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
       ]
     },
     {
-      title: "Frontend & Web",
+      title: "Frontend & UI",
       skills: [
-        { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-        { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-        { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-        { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' }
-      ]
-    },
-    {
-      title: "Databases & Tools",
-      skills: [
-        { name: 'SQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
+        { name: 'React', level: 85, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+        { name: 'JavaScript (ES6+)', level: 88, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+        { name: 'Modern CSS', level: 80, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+        { name: 'Animations (Framer)', level: 75, icon: 'https://framermotion.framer.website/logo.png' }
       ]
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 }
-    },
-    exit: { opacity: 0, x: -50, transition: { duration: 0.3 } }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } }
-  };
-
   return (
     <motion.section 
       className="skills-section"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, x: -50 }}
     >
       <div className="container">
-        <motion.h2 
-          className="section-title"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Expertise & Stack
-        </motion.h2>
-
-        <div className="skills-grid-wrapper">
+        <h2 className="section-title">Technical Mastery</h2>
+        <div className="skills-detailed-grid">
           {skillCategories.map((category, catIndex) => (
-            <motion.div key={catIndex} className="skill-category" 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: catIndex * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="category-title">{category.title}</h3>
-              <div className="skills-container">
+            <div key={catIndex} className="skill-category-block">
+              <h3 className="category-subtitle">{category.title}</h3>
+              <div className="skill-bars-list">
                 {category.skills.map((skill, index) => (
-                  <motion.div key={index} className="skill-item" variants={itemVariants}>
-                    <img src={skill.icon} alt={skill.name} className="skill-icon" />
-                    <span className="skill-name">{skill.name}</span>
-                  </motion.div>
+                  <SkillBar 
+                    key={index} 
+                    {...skill} 
+                    delay={catIndex * 0.2 + index * 0.1} 
+                  />
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
