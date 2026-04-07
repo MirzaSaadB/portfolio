@@ -54,7 +54,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="social-links">
-              <a href="#" className="social-link">Github</a>
+              <a href="https://github.com/MirzaSaadB" className="social-link" target="_blank" rel="noopener noreferrer">Github</a>
               <a href="https://www.linkedin.com/in/mirza-mohammad-saad/" className="social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               <a href="#" className="social-link">Twitter</a>
             </div>
