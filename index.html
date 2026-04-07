@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
+    <link rel="manifest" href="/portfolio/manifest.json" />
+    <meta name="theme-color" content="#0f1115" />
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/portfolio/sw.js');
+        });
+      }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +35,8 @@
     <meta name="twitter:title" content="Mohammed Saad Mirza | Portfolio" />
     <meta name="twitter:description" content="Explore the portfolio of Mohammed Saad Mirza, specializing in Java and React development." />
     <meta name="twitter:image" content="/assets/mohammed saad .jpg" />
-    <script type="module" crossorigin src="/portfolio/assets/index-DKBprZBV.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-t1QVht8-.css">
+    <script type="module" crossorigin src="/portfolio/assets/index-mwnI4-s8.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-DaCS3Dgl.css">
   </head>
   <body>
     <div id="root"></div>

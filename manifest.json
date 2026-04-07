@@ -1,0 +1,17 @@
+{
+  "name": "Mohammad Saad Mirza Portfolio",
+  "short_name": "Saad's Portfolio",
+  "description": "Professional Full Stack Java & React Developer Portfolio",
+  "start_url": "/portfolio/",
+  "display": "standalone",
+  "background_color": "#0f1115",
+  "theme_color": "#8fa1b3",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
