@@ -3,20 +3,34 @@ import { motion } from 'framer-motion';
 import './Contact.css';
 
 const Contact = () => {
-  const [formStatus, setFormStatus] = useState('idle'); // idle, loading, success
+  const [formStatus, setFormStatus] = useState('idle'); // idle, loading, success, error
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormStatus('loading');
-    
-    // Simulate backend request (Formspree simulation)
-    setTimeout(() => {
-      setFormStatus('success');
-      e.target.reset();
-      
-      // Reset after 3 seconds
-      setTimeout(() => setFormStatus('idle'), 3000);
-    }, 1500);
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xwpbrkdz', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      });
+
+      if (response.ok) {
+        setFormStatus('success');
+        form.reset();
+        setTimeout(() => setFormStatus('idle'), 4000);
+      } else {
+        setFormStatus('error');
+        setTimeout(() => setFormStatus('idle'), 4000);
+      }
+    } catch {
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 4000);
+    }
   };
 
   const pageVariants = {
@@ -26,8 +40,8 @@ const Contact = () => {
   };
 
   return (
-    <motion.section 
-      className="contact-section" style={{ minHeight: '100vh', paddingTop: '120px' }}
+    <motion.section
+      className="contact-section" style={{ minHeight: '100vh', paddingTop: '80px' }}
       variants={pageVariants}
       initial="hidden"
       animate="visible"
@@ -39,8 +53,8 @@ const Contact = () => {
           <div className="contact-info">
             <h3 className="contact-subtitle">Available for new opportunities.</h3>
             <p>
-              I'm always looking for new challenges and opportunities to build 
-              great products. Whether you have a question or just want to say hi, 
+              I'm always looking for new challenges and opportunities to build
+              great products. Whether you have a question or just want to say hi,
               I'll try my best to get back to you!
             </p>
             <div className="contact-details">
@@ -59,8 +73,8 @@ const Contact = () => {
               <a href="#" className="social-link">Twitter</a>
             </div>
           </div>
-          
-          <form className="contact-form" onSubmit={handleSubmit} method="POST" action="https://formspree.io/f/your_form_id">
+
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <input type="text" id="name" name="name" placeholder=" " required />
               <label htmlFor="name">Name</label>
@@ -72,14 +86,27 @@ const Contact = () => {
               <div className="input-border"></div>
             </div>
             <div className="form-group">
+              <input type="tel" id="phone" name="phone" placeholder=" " />
+              <label htmlFor="phone">Phone Number (optional)</label>
+              <div className="input-border"></div>
+            </div>
+            <div className="form-group">
               <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
               <label htmlFor="message">Message</label>
               <div className="input-border"></div>
             </div>
+
+            {formStatus === 'error' && (
+              <p style={{ color: '#ff6b6b', marginBottom: '12px', fontSize: '0.9rem' }}>
+                Something went wrong. Please try again or email me directly.
+              </p>
+            )}
+
             <button type="submit" className="cyber-button" disabled={formStatus === 'loading'}>
-              {formStatus === 'idle' && 'Send Message'}
+              {formStatus === 'idle'    && 'Send Message →'}
               {formStatus === 'loading' && 'Sending...'}
-              {formStatus === 'success' && 'Message Sent!'}
+              {formStatus === 'success' && '✓ Message Sent!'}
+              {formStatus === 'error'   && 'Try Again'}
             </button>
           </form>
         </div>
