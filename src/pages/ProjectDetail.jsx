@@ -1,3 +1,7 @@
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import './ProjectDetail.css';
 import intalliLandingSnap from '../assets/intallitask_real.png';
 import intalliDashSnap from '../assets/intallitask_dashboard.png';
 import intalliAdminSnap from '../assets/intallitask_admin.png';
