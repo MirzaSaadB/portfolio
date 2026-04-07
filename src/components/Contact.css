@@ -1,0 +1,153 @@
+.contact-section {
+  background-color: var(--bg-color-alt);
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-top: 50px;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.contact-info p {
+  color: var(--text-primary);
+  margin-bottom: 40px;
+  max-width: 400px;
+}
+
+.contact-details {
+  margin: 30px 0;
+}
+
+.detail-item {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detail-item .label {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detail-item .value {
+  font-size: 1.1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.social-link {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.social-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--text-secondary);
+  transition: var(--transition-smooth);
+}
+
+.social-link:hover {
+  color: var(--text-secondary);
+}
+
+.social-link:hover::after {
+  width: 100%;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  background: var(--bg-color);
+  padding: 50px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  color: var(--text-primary);
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.input-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--primary-color);
+  transition: var(--transition-smooth);
+}
+
+.form-group input:focus ~ .input-border,
+.form-group textarea:focus ~ .input-border {
+  width: 100%;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -25px;
+  font-size: 0.85rem;
+  color: var(--primary-color);
+}
+
+.contact-form .cyber-button {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
