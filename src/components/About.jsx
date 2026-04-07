@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
+import profilePic from '../assets/mohammed saad .jpg';
 
 const About = () => {
   return (
@@ -13,8 +14,8 @@ const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="image-border-decoration"></div>
-          <div className="abstract-shape"></div>
+          <div className="image-border-decoration" style={{ zIndex: 1 }}></div>
+          <img src={profilePic} alt="Mohammed Saad Mirza" className="about-photo" style={{ width: '280px', height: '350px', objectFit: 'cover', position: 'relative', zIndex: 2, borderRadius: '8px' }} />
         </motion.div>
         
         <motion.div 

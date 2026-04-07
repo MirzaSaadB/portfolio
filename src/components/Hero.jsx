@@ -39,7 +39,7 @@ const Hero = () => {
           </motion.p>
           <motion.div variants={itemVariants} className="hero-actions">
             <Link to="/projects" className="cyber-button">View Work</Link>
-            <a href="/Resume.pdf" download="Mohammed_Saad_Mirza_Resume.pdf" className="cyber-button secondary">Download Resume</a>
+            <a href="Resume.pdf" target="_blank" rel="noopener noreferrer" className="cyber-button secondary">View Resume</a>
           </motion.div>
         </div>
         <motion.div 
