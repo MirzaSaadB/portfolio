@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import './Skills.css';
 
 const SkillBar = ({ name, icon, level, delay }) => (
