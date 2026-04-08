@@ -14,6 +14,37 @@ import Experience from './components/Experience';
 
 import HireMe from './components/HireMe';
 
+// Simple Error Boundary component
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error("Uncaught error:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ padding: '20px', color: '#ff5555', background: '#1a1a1a', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+          <h1>Something went wrong.</h1>
+          <p>{this.state.error?.message}</p>
+          <button onClick={() => window.location.reload()} style={{ padding: '10px 20px', marginTop: '20px', background: '#333', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+            Reload Page
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 // Professional Home Composite
 const Home = () => (
 <>
@@ -50,18 +81,20 @@ const toggleTheme = () => {
 setTheme(theme === 'dark' ? 'light' : 'dark');
 };
 
-return (
-<HashRouter>
-<div className="app">
-<Navbar toggleTheme={toggleTheme} currentTheme={theme} />
-<main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-<AnimatedRoutes />
-</main>
-<HireMe />
-<Footer />
-</div>
-</HashRouter>
-);
+  return (
+    <ErrorBoundary>
+      <HashRouter>
+        <div className="app">
+          <Navbar toggleTheme={toggleTheme} currentTheme={theme} />
+          <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+            <AnimatedRoutes />
+          </main>
+          <HireMe />
+          <Footer />
+        </div>
+      </HashRouter>
+    </ErrorBoundary>
+  );
 }
 
 export default App;

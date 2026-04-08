@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Hero.css';
-import profilePic from '../assets/mohammed saad .jpg';
+import TechStackAnimation from './TechStackAnimation';
 
 const Hero = () => {
   const containerVariants = {
@@ -43,12 +43,12 @@ const Hero = () => {
           </motion.div>
         </div>
         <motion.div 
-          className="hero-image-wrapper"
+          className="hero-image-wrapper animation-column"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
         >
-           <img src={profilePic} alt="Mohammed Saad Mirza" className="hero-photo" />
+           <TechStackAnimation />
         </motion.div>
       </div>
     </motion.section>

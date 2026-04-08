@@ -46,7 +46,7 @@ const Skills = () => {
         { name: 'React', level: 85, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
         { name: 'JavaScript (ES6+)', level: 88, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
         { name: 'Modern CSS', level: 80, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-        { name: 'Animations (Framer)', level: 75, icon: 'https://framermotion.framer.website/logo.png' }
+        { name: 'HTML5', level: 92, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' }
       ]
     }
   ];

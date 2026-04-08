@@ -2,13 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
-    <link rel="manifest" href="/portfolio/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="manifest" href="./manifest.json" />
     <meta name="theme-color" content="#0f1115" />
     <script>
+      // Force unregister any existing service workers that might be causing caching issues
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/portfolio/sw.js');
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for(let registration of registrations) {
+            registration.unregister();
+          }
         });
       }
     </script>
@@ -27,14 +30,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Mohammed Saad Mirza | Full Stack Developer" />
     <meta property="og:description" content="Building robust enterprise applications and seamless web experiences. View my latest projects and skills." />
-    <meta property="og:image" content="/assets/mohammed saad .jpg" />
-    <meta property="og:url" content="https://mirza.dev" />
+    <meta property="og:image" content="https://mirzasaadb.github.io/portfolio/assets/hero.png" />
+    <meta property="og:url" content="https://mirzasaadb.github.io/portfolio/" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Mohammed Saad Mirza | Portfolio" />
     <meta name="twitter:description" content="Explore the portfolio of Mohammed Saad Mirza, specializing in Java and React development." />
-    <meta name="twitter:image" content="/assets/mohammed saad .jpg" />
+    <meta name="twitter:image" content="https://mirzasaadb.github.io/portfolio/assets/hero.png" />
   </head>
   <body>
     <div id="root"></div>
