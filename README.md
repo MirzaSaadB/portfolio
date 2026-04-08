@@ -15,18 +15,12 @@ Welcome to the definitive source code for my professional portfolio. This site i
 
 This portfolio recently underwent a **complete UI/UX restoration** to enhance its visual impact and technical stability:
 
-### 🧩 The "Hero Sequence" Animation
-Rather than a static profile photo, the hero section now features a custom **dynamic tech-stack "tower"**:
-- **Fly-in Sequence**: Icons fly in one-by-one from the screen edges.
-- **Hero Zoom ("Thoda Bada")**: Each technology takes center stage with a 2.5x scale zoom before joining the stack.
-- **Idle Movement ("Hlte Rehna")**: A continuous, random floating and rotating animation keeps the section alive even when idle.
-- **Zig-Zag Pattern**: A unique, non-uniform vertical stacking arrangement that breaks away from traditional grid layouts.
-
-### 🛡️ Technical Stability (The "Kill-Switch")
-To resolve persistent caching issues common with GitHub Pages deployments, we implemented a custom **Service Worker Kill-Switch**:
-- Automatically unregisters stale `sw.js` instances.
-- Clears browser caches on user visits to ensure they always see the latest bundle.
-- Prevents the dreaded "white screen of death" caused by outdated assets.
+### 💎 Flagship UI & Modernization
+This portfolio features a **State-of-the-Art** user interface focused on "Flagship" experience:
+- **Flagship Tech Animation**: A high-end, responsive tech stack visualization with glassmorphism (16px blur), radial inner glows, and deep shadow effects.
+- **Magnetic Interactions**: Premium hover states with 1.15x scaling and dynamic rotation on all desktop devices.
+- **Adaptive Architecture**: The complex zig-zag animation automatically scales and re-arranges for mobile screens to ensure zero layout shift.
+- **The "Kill-Switch"**: Built-in Service Worker management to prevent stale caching issues on GitHub Pages.
 
 ---
 

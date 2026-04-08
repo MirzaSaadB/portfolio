@@ -46,8 +46,9 @@
 
 @media (max-width: 860px) {
   .animation-column {
-    min-height: 300px;
+    min-height: 480px;
     margin-bottom: 20px;
+    width: 100%;
   }
 }
 
