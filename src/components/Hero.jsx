@@ -27,6 +27,7 @@ const Hero = () => {
       initial="hidden"
       animate="visible"
       exit="exit"
+      viewport={{ once: true }}
     >
       <div className="container hero-container">
         <div className="hero-content">

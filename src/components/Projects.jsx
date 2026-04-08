@@ -51,6 +51,7 @@ const Projects = () => {
       initial="hidden"
       animate="visible"
       exit="exit"
+      viewport={{ once: true, amount: 0.1 }}
     >
       <Helmet>
         <title>Selected Projects | Mohammed Saad Mirza | Full Stack Developer</title>
