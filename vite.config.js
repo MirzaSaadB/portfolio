@@ -8,9 +8,10 @@ export default defineConfig({
     {
       name: 'html-base-url',
       transformIndexHtml(html, ctx) {
-        return html.replace(/%BASE_URL%/g, ctx.server ? '/' : '/portfolio/');
+        // Netlify serves from the root, so we use '/' regardless of environment
+        return html.replace(/%BASE_URL%/g, '/');
       }
     }
   ],
-  base: "/portfolio/",
+  base: "/",
 })

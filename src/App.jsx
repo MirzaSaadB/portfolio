@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -83,7 +83,7 @@ setTheme(theme === 'dark' ? 'light' : 'dark');
 
   return (
     <ErrorBoundary>
-      <HashRouter>
+      <BrowserRouter>
         <div className="app">
           <Navbar toggleTheme={toggleTheme} currentTheme={theme} />
           <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
@@ -92,7 +92,7 @@ setTheme(theme === 'dark' ? 'light' : 'dark');
           <HireMe />
           <Footer />
         </div>
-      </HashRouter>
+      </BrowserRouter>
     </ErrorBoundary>
   );
 }
