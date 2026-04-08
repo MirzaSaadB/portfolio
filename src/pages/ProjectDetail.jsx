@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import './ProjectDetail.css';
 import intalliLandingSnap from '../assets/intallitask_real.png';
 import intalliDashSnap from '../assets/intallitask_dashboard.png';
@@ -69,6 +70,12 @@ const ProjectDetail = () => {
       className="project-detail-section"
       style={{ padding: '80px 0', minHeight: '100vh' }}
     >
+      <Helmet>
+        <title>{`${project.title} | Project Details | Mohammed Saad Mirza`}</title>
+        <meta name="description" content={project.description} />
+        <meta property="og:title" content={`${project.title} - ${project.type}`} />
+        <meta property="og:description" content={project.description} />
+      </Helmet>
       <div className="container">
         <Link to="/projects" className="back-link">← Back to Projects</Link>
         <span className="project-type-tag">{project.type}</span>

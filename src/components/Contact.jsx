@@ -47,6 +47,10 @@ const Contact = () => {
       animate="visible"
       exit="exit"
     >
+      <Helmet>
+        <title>Contact | Mohammed Saad Mirza | Full Stack Developer</title>
+        <meta name="description" content="Get in touch with Mohammed Saad Mirza for collaboration, enterprise software development, or full-stack opportunities." />
+      </Helmet>
       <div className="container">
         <h2 className="section-title">Get In Touch</h2>
         <div className="contact-content">

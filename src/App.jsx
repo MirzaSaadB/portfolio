@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
@@ -82,18 +83,20 @@ setTheme(theme === 'dark' ? 'light' : 'dark');
 };
 
   return (
-    <ErrorBoundary>
-      <BrowserRouter>
-        <div className="app">
-          <Navbar toggleTheme={toggleTheme} currentTheme={theme} />
-          <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-            <AnimatedRoutes />
-          </main>
-          <HireMe />
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </ErrorBoundary>
+    <HelmetProvider>
+      <ErrorBoundary>
+        <BrowserRouter>
+          <div className="app">
+            <Navbar toggleTheme={toggleTheme} currentTheme={theme} />
+            <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+              <AnimatedRoutes />
+            </main>
+            <HireMe />
+            <Footer />
+          </div>
+        </BrowserRouter>
+      </ErrorBoundary>
+    </HelmetProvider>
   );
 }
 

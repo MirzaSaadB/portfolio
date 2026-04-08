@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import GithubStats from './GithubStats';
 import './Projects.css';
 
@@ -51,6 +52,10 @@ const Projects = () => {
       animate="visible"
       exit="exit"
     >
+      <Helmet>
+        <title>Selected Projects | Mohammed Saad Mirza | Full Stack Developer</title>
+        <meta name="description" content="A showcase of my recent full-stack development projects, featuring enterprise systems and interactive web applications." />
+      </Helmet>
       <div className="container">
         <motion.h2 
           className="section-title"

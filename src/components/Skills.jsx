@@ -58,6 +58,10 @@ const Skills = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, x: -50 }}
     >
+      <Helmet>
+        <title>Technical Skills | Mohammed Saad Mirza | Java & React Expert</title>
+        <meta name="description" content="Explore the technical expertise of Mohammed Saad Mirza, including Java, Spring Boot, React, and Enterprise Architecture." />
+      </Helmet>
       <div className="container">
         <h2 className="section-title">Technical Mastery</h2>
         <div className="skills-detailed-grid">
