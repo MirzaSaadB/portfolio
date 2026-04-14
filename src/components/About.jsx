@@ -16,7 +16,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <div className="image-border-decoration" style={{ zIndex: 1 }}></div>
-            <img src={profilePic} alt="Mohammed Saad Mirza" className="about-photo" style={{ width: '280px', height: '350px', objectFit: 'cover', position: 'relative', zIndex: 2, borderRadius: '8px' }} />
+            <img src={profilePic} alt="Mohammed Saad Mirza" className="about-photo" style={{ width: '100%', maxWidth: '280px', height: 'auto', maxHeight: '350px', objectFit: 'cover', position: 'relative', zIndex: 2, borderRadius: '8px' }} />
           </motion.div>
           
           <motion.div 

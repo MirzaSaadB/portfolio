@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   gap: 80px;
+  flex-wrap: wrap;
 }
 
 .about-image-side {
@@ -76,13 +77,22 @@
   .about-container {
     flex-direction: column;
     text-align: center;
-    gap: 40px;
+    gap: 60px;
   }
   .about-image-side {
-    display: none; /* Hide decoration on simple mobile view for clean look */
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .image-border-decoration {
+    width: 240px;
+    height: 300px;
+    transform: translate(15px, 15px);
   }
   .about-stats {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
   }
 }
 

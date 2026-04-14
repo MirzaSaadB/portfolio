@@ -117,7 +117,7 @@
   .hero-container {
     flex-direction: column-reverse;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 100px; /* Increased padding to clear navbar */
   }
   
   .hero-actions {
