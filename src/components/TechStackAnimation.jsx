@@ -51,11 +51,12 @@ const TechStackAnimation = () => {
       animate="visible"
       style={{ 
         position: 'relative', 
-        width: isMobile ? '100%' : 'min(900px, 95vw)', 
+        width: isMobile ? '100vw' : 'min(900px, 95vw)', 
         height: isMobile ? '450px' : 'min(500px, 90vw)', 
         display: 'flex', 
         justifyContent: 'center', 
-        alignItems: 'center' 
+        alignItems: 'center',
+        overflow: 'hidden'
       }}
     >
       {/* Central Glow - Flagship Style */}
@@ -79,7 +80,7 @@ const TechStackAnimation = () => {
       />
 
       {techStack.map((tech, index) => {
-        const side = index % 2 === 0 ? (isMobile ? -250 : -500) : (isMobile ? 250 : 500);
+        const side = index % 2 === 0 ? (isMobile ? -150 : -500) : (isMobile ? 150 : 500);
         const finalX = isMobile ? (index % 2 === 0 ? -60 : 60) : (index % 2 === 0 ? -85 : 85); 
         const finalY = (index - (techStack.length - 1) / 2) * (isMobile ? 55 : 70); 
 

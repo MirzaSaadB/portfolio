@@ -46,6 +46,8 @@
   line-height: 1.8;
   margin-bottom: 25px;
   color: var(--text-primary);
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .about-stats {
@@ -78,6 +80,7 @@
     flex-direction: column;
     text-align: center;
     gap: 60px;
+    padding: 0 10px;
   }
   .about-image-side {
     height: auto;
@@ -93,6 +96,10 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
+    width: 100%;
+  }
+  .stat-box {
+    min-width: 120px;
   }
 }
 

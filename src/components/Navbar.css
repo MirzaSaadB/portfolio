@@ -143,10 +143,15 @@
     gap: 40px;
     transition: var(--transition-smooth);
     z-index: 1000;
+    overflow-x: hidden;
+    visibility: hidden;
+    opacity: 0;
   }
 
   .nav-links.mobile-open {
     right: 0;
+    visibility: visible;
+    opacity: 1;
   }
 
   .nav-link {

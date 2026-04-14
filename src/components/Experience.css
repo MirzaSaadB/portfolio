@@ -44,6 +44,12 @@
   box-shadow: var(--soft-shadow);
 }
 
+@media (max-width: 768px) {
+  .timeline-content:hover {
+    transform: none;
+  }
+}
+
 .timeline-year {
   color: var(--primary-color);
   font-family: var(--font-heading);
@@ -73,6 +79,12 @@
 
 @media (max-width: 768px) {
   .timeline {
-    margin-left: 20px;
+    margin: 40px 10px 0 20px;
+    padding-left: 20px;
+  }
+  .timeline-dot {
+    left: -31px;
+    width: 16px;
+    height: 16px;
   }
 }
