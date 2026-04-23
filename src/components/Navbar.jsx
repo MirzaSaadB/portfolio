@@ -1,16 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import './Navbar.css';
 
 const Navbar = ({ toggleTheme, currentTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className="navbar">
+    <motion.nav 
+      className={`navbar ${scrolled ? 'scrolled' : ''}`}
+      initial={{ y: -100, x: "-50%", opacity: 0 }}
+      animate={{ y: 0, x: "-50%", opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+    >
       <div className="container nav-container">
-        <Link to="/" className="nav-logo" onClick={closeMenu}>Mohammad Saad</Link>
+        <Link to="/" className="nav-logo" onClick={closeMenu}>
+          <span className="logo-dot"></span>
+          Mohammad Saad
+        </Link>
         
         <button className={`mobile-menu-toggle ${isMenuOpen ? 'open' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <span className="hamburger"></span>
@@ -28,7 +46,7 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
           </li>
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

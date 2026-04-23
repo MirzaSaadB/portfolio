@@ -52,11 +52,10 @@ const TechStackAnimation = () => {
       style={{ 
         position: 'relative', 
         width: isMobile ? '100vw' : 'min(900px, 95vw)', 
-        height: isMobile ? '450px' : 'min(500px, 90vw)', 
+        height: isMobile ? '480px' : '600px', 
         display: 'flex', 
         justifyContent: 'center', 
-        alignItems: 'center',
-        overflow: 'hidden'
+        alignItems: 'center'
       }}
     >
       {/* Central Glow - Flagship Style */}
